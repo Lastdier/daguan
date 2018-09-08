@@ -1,0 +1,1 @@
+python test_folds.py stacking_train_set  --max_epoch=10 --plot_every=100 --weight=1 --model='LSTMText'  --env='lstm' --batch-size=64  --lr=0.001 --lr2=0.000 --lr_decay=0.8 --decay_every=600 --content-dim=500  --type_='word'  --kernel-size=2 --kmax-pooling=1 --linear-hidden-size=2000 --debug-file='/tmp/debugrcnn' --hidden-size=300 --num-workers=4 --embedding_path='vector.300dim' 
