@@ -193,7 +193,7 @@ def main(**kwargs):
                         notimproved_count += 1
                         if notimproved_count == 5:
                             break
-                        state = t.load('rcnnemb_'+str(fold)+'_score' +str(best_score)+'.pt')
+                        state = t.load('lstmaug_'+str(fold)+'_score' +str(best_score)+'.pt')
                         model.load_state_dict(state)
                         model.cuda()
                         lr = lr * opt.lr_decay
@@ -202,7 +202,7 @@ def main(**kwargs):
                     if val_f1 > best_score:
                         notimproved_count = 0
                         best_score = val_f1
-                        t.save(model.cpu().state_dict(), 'rcnnemb_'+str(fold)+'_score'+str(best_score)+'.pt')
+                        t.save(model.cpu().state_dict(), 'lstmaug_'+str(fold)+'_score'+str(best_score)+'.pt')
                         model.cuda()                      
                     #
                     pre_loss = loss_meter.value()[0]
